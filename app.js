@@ -2,25 +2,17 @@ const express = require("express")
 const app = express()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-// const request = require("request")
+const Comments = require('./models/comment')
+const Campground = require('./models/campground')
+const seedDB = require('./seeds')
 const port = 3000
 
-mongoose.connect("mongodb://localhost:32768/yelp_camp", { useNewUrlParser: true })
-// mongoose schema
-const campgroundSchema = new mongoose.Schema({
-  name: String,
-  image: String,
-  description: String
-})
-const Campground = mongoose.model("Campground", campgroundSchema)
-
-
+seedDB()
+mongoose.connect("mongodb://localhost:32771/yelp_camp", { useNewUrlParser: true })
 
 app.use(bodyParser.urlencoded({ extended: true}))
 app.set("view engine", "ejs")
 app.use(express.static("public"))
-
-
 
 app.get("/", (req, res) => {
   res.render("landing")
