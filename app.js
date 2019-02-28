@@ -50,13 +50,15 @@ app.get("/campgrounds/new", (req, res) => {
 
 
 app.get("/campgrounds/:id", (req, res) => {
-  Campground.findById(req.params.id, (err, foundCampground) => {
+  Campground.findById(req.params.id)
+    .populate("comments").exec( (err, foundCampground) => {
     if (err) {
       console.log(err);
     } else {
+      console.log(foundCampground);
       res.render("show", {campground: foundCampground})
     }
-  });
+  })
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

@@ -6,6 +6,11 @@
     <li><img src="<%= campground.image %>" alt="campground photo"></li>
     <li><%= campground.description %></li>
   </ul>
+  <% campground.comments.forEach((comment) => { %>
+    <p style="text-align: center;">
+      <strong><%= comment.author %></strong> - <%= comment.text %>
+    </p>
+  <% }) %>
 </div>
 
 <% include partials/footer %>
