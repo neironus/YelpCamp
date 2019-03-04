@@ -1,16 +1,23 @@
-<% include partials/header %>
+<% include ../partials/header %>
 
 <div class="container">
-  <ul class="w-50 m-auto" style="list-style: none;">
+  <ul class="w-75 p-0 m-auto" style="list-style: none;">
     <li><h2><%= campground.name %></h2></li>
     <li><img src="<%= campground.image %>" alt="campground photo"></li>
     <li><%= campground.description %></li>
   </ul>
+
+  <div class="w-75 m-auto">
+    <p>
+      <a class="m-auto btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
+    </p>
+  </div>
+
   <% campground.comments.forEach((comment) => { %>
-    <p style="text-align: center;">
+    <p class="w-75 m-auto" >
       <strong><%= comment.author %></strong> - <%= comment.text %>
     </p>
   <% }) %>
 </div>
 
-<% include partials/footer %>
+<% include ../partials/footer %>

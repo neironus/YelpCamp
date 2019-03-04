@@ -18,6 +18,24 @@ const data = [{
     name: "Canyon Floor",
     image: "https://farm9.staticflickr.com/8673/15989950903_8185ed97c3.jpg",
     description: "blah blazing scorching hot canyon blah blerp."
+  },
+
+  {
+    name: 'Kitty Terwolbeck',
+    image: "https://farm9.staticflickr.com/8579/16706717975_bdc99767d7.jpg",
+    description: "blah sand and hot blah blerp."
+  },
+
+  {
+    name: 'Ed Hunsinger',
+    image: 'https://farm3.staticflickr.com/2116/2164766085_0229ac3f08.jpg',
+    description: "blah sand and hot blah blerp."
+  },
+
+  {
+    name: 'Kelle Cruz',
+    image: 'https://farm2.staticflickr.com/1424/1430198323_c26451b047.jpg',
+    description: "blah sand and hot blah blerp."
   }
 ]
 
