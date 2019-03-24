@@ -14,7 +14,7 @@ const indexRoutes = require('./routes/index')
 const seedDB = require('./seeds')
 const port = 3000
 
-seedDB()
+// seedDB() test content
 mongoose.connect("mongodb://localhost:32768/yelp_camp", { useNewUrlParser: true })
 
 app.use(bodyParser.urlencoded({ extended: true}))
