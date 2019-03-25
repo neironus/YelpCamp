@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const LocalStrategy = require('passport-local')
+const methodOverride = require('method-override')
 const User = require('./models/user')
 const Comment = require('./models/comment')
 const Campground = require('./models/campground')
@@ -20,6 +21,7 @@ mongoose.connect("mongodb://localhost:32768/yelp_camp", { useNewUrlParser: true 
 app.use(bodyParser.urlencoded({ extended: true}))
 app.set("view engine", "ejs")
 app.use(express.static(__dirname + "/public"))
+app.use(methodOverride("_method"))
 
 //PASSPORT ==========
 app.use(session({
